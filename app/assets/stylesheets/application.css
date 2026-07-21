@@ -1,0 +1,252 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+}
+
+.container{
+
+    width:100vw;
+    min-height:100vh;
+    padding:40px 0;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#ffd6ea,#fff5fa);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+h1{
+
+    font-size:55px;
+    color:#ff3c84;
+    margin-bottom:50px;
+
+}
+
+button{
+
+    width:220px;
+    padding:18px;
+
+    margin:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#yes-btn{
+
+    background:#ff4d88;
+    color:white;
+
+}
+
+#yes-btn:hover{
+
+    transform:scale(1.08);
+
+}
+
+#no-btn{
+
+    background:#999;
+    color:white;
+
+}
+
+.flatpickr-calendar {
+    transform: scale(0.65);
+    transform-origin: top center;
+}
+.flatpickr-day.selected{
+    background:#ff4d88;
+    border-color:#ff4d88;
+}
+
+.flatpickr-day:hover{
+    background:#ffd6e8;
+}
+
+.flatpickr-months{
+    background:#ff4d88;
+    color:white;
+}
+
+.flatpickr-current-month{
+    color:white;
+}
+
+.calendar-box{
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+
+
+
+.content{
+    text-align:center;
+}
+
+.date-options{
+    display:grid;
+    grid-template-columns:repeat(3,200px);
+    gap:50px 60px;
+    justify-content:center;
+    margin:50px 0;
+}
+
+.option{
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.option:hover{
+    transform:scale(1.1);
+}
+
+.emoji{
+    font-size:80px;
+}
+
+.option p{
+    margin-top:12px;
+    font-size:22px;
+    font-weight:bold;
+    color:#ff4d88;
+}
+
+.continue-btn{
+    background:#ff4d88;
+    color:white;
+    border:none;
+    padding:12px 28px;
+    border-radius:12px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.continue-btn:hover{
+    background:#ff2d73;
+}
+
+
+
+.gift-title{
+    font-family:"Brush Script MT", cursive;
+    font-size:55px;
+    font-style:italic;
+    color:#ff4d88;
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.gift-options{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin-bottom:60px;
+}
+
+.gift-card{
+    width:220px;
+    height:250px;
+    background:white;
+    border-radius:25px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.gift-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(255,77,136,.35);
+}
+
+.gift-emoji{
+    font-size:90px;
+}
+
+.gift-card p{
+    margin-top:20px;
+    font-size:22px;
+    font-weight:bold;
+    color:#ff4d88;
+}
+
+.next-btn{
+    padding:14px 40px;
+    font-size:20px;
+    border:none;
+    border-radius:12px;
+    background:#ff4d88;
+    color:white;
+    cursor:pointer;
+}
+
+.next-btn:hover{
+    background:#ff2d73;
+}
+
+
+
+.thankyou-container{
+    width:100vw;
+    height:100vh;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#ffd6ea,#fff5fa);
+}
+
+.thank-you-title{
+    font-family:"Brush Script MT", cursive;
+    font-size:90px;
+    font-style:italic;
+    color:#ff4d88;
+}
+
+.bottom-message{
+    position:absolute;
+    bottom:35px;
+    left:50%;
+    transform:translateX(-50%);
+
+    font-family:"Brush Script MT", cursive;
+    font-size:24px;
+    font-style:italic;
+    color:#666;
+}

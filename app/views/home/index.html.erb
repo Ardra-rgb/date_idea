@@ -1,0 +1,29 @@
+<div class="container">
+
+    <h1>💖 Would you go on a date with me? 💖</h1>
+
+    <button id="yes-btn" onclick="window.location='/date/index'">
+        Yes ❤️
+    </button>
+
+    <button id="no-btn">
+        No 💔
+    </button>
+
+</div>
+
+<script>
+const noBtn = document.getElementById("no-btn");
+const container = document.querySelector(".container");
+
+noBtn.addEventListener("mouseover", () => {
+
+    const maxX = container.clientWidth - noBtn.offsetWidth;
+    const maxY = container.clientHeight - noBtn.offsetHeight;
+
+    noBtn.style.position = "absolute";
+    noBtn.style.left = Math.random() * maxX + "px";
+    noBtn.style.top = Math.random() * maxY + "px";
+
+});
+</script>
