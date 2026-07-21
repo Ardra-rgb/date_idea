@@ -301,3 +301,114 @@ button{
     font-weight:bold;
     color:#ff4d88;
 }
+
+
+.date-layout{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:70px;
+
+    margin-top:40px;
+
+}
+
+.calendar-section{
+
+    width:45%;
+
+    text-align:center;
+
+}
+
+.time-section{
+
+    width:45%;
+
+    text-align:center;
+
+}
+
+.section-title{
+
+    color:#ff4d88;
+
+    margin-bottom:20px;
+
+}
+
+.time-title{
+
+    font-family:"Brush Script MT", cursive;
+
+    font-size:38px;
+
+    font-style:italic;
+
+    color:#ff4d88;
+
+    margin-bottom:25px;
+
+}
+
+.time-options{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,160px);
+
+    gap:20px;
+
+    justify-content:center;
+
+    margin-bottom:35px;
+
+}
+
+.time-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.time-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(255,77,136,.3);
+
+}
+
+.time-emoji{
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+.time-card p{
+
+    margin:0;
+
+    color:#ff4d88;
+
+    font-weight:bold;
+
+    font-size:20px;
+
+}

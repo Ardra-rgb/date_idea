@@ -2,46 +2,60 @@
 
     <h1>💖 Pick Our Date 💖</h1>
 
-    <input
-        id="calendar"
-        type="text">
+    <div class="date-layout">
 
-    <br><br>
+        <!-- Left Side -->
+        <div class="calendar-section">
 
-    <h2 class="time-title">
-        What time works best?
-    </h2>
+            <h2 class="section-title">
+                📅 Choose a Date
+            </h2>
 
-    <div class="time-options">
+            <input
+                id="calendar"
+                type="text">
 
-        <div class="time-card">
-            <div class="time-emoji">☀️</div>
-            <p>Morning</p>
         </div>
 
-        <div class="time-card">
-            <div class="time-emoji">🌤</div>
-            <p>Afternoon</p>
-        </div>
+        <!-- Right Side -->
+        <div class="time-section">
 
-        <div class="time-card">
-            <div class="time-emoji">🌇</div>
-            <p>Evening</p>
-        </div>
+            <h2 class="time-title">
+                What time works best?
+            </h2>
 
-        <div class="time-card">
-            <div class="time-emoji">🌙</div>
-            <p>Night</p>
+            <div class="time-options">
+
+                <div class="time-card">
+                    <div class="time-emoji">☀️</div>
+                    <p>Morning</p>
+                </div>
+
+                <div class="time-card">
+                    <div class="time-emoji">🌤</div>
+                    <p>Afternoon</p>
+                </div>
+
+                <div class="time-card">
+                    <div class="time-emoji">🌇</div>
+                    <p>Evening</p>
+                </div>
+
+                <div class="time-card">
+                    <div class="time-emoji">🌙</div>
+                    <p>Night</p>
+                </div>
+
+            </div>
+
+            <button
+                class="continue-btn"
+                onclick="window.location='/perfect_date/index'">
+                Continue ❤️
+            </button>
+
         </div>
 
     </div>
-
-    <br>
-
-    <button
-        class="continue-btn"
-        onclick="window.location='/perfect_date/index'">
-        Continue ❤️
-    </button>
 
 </div>
