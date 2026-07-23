@@ -49,13 +49,85 @@
             </div>
 
             <button
+                id="continue-btn"
                 class="continue-btn"
-                onclick="window.location='/perfect_date/index'">
+                disabled>
                 Continue ❤️
-            </button>
+                </button>
 
         </div>
 
     </div>
 
 </div>
+
+<script>
+let chosenTime = "";
+
+const cards = document.querySelectorAll(".time-card");
+const continueBtn = document.getElementById("continue-btn");
+
+let selectedTime = false;
+
+// Time selection
+cards.forEach(card => {
+    card.addEventListener("click", () => {
+
+        cards.forEach(c => c.classList.remove("selected"));
+        card.classList.add("selected");
+
+        selectedTime = true;
+        chosenTime = card.querySelector("p").innerText;
+
+        checkButton();
+    });
+});
+
+// Calendar
+const calendar = flatpickr("#calendar", {
+    inline: true,
+    minDate: "today",
+    dateFormat: "Y-m-d",
+    onChange: checkButton
+});
+
+function checkButton() {
+
+    const date = document.getElementById("calendar").value;
+
+    continueBtn.disabled = !(selectedTime && date);
+}
+
+continueBtn.addEventListener("click", () => {
+
+    const form = document.createElement("form");
+
+    form.method = "POST";
+    form.action = "/date/save";
+
+    const dateInput = document.createElement("input");
+    dateInput.type = "hidden";
+    dateInput.name = "selected_date";
+    dateInput.value = document.getElementById("calendar").value;
+
+    const timeInput = document.createElement("input");
+    timeInput.type = "hidden";
+    timeInput.name = "selected_time";
+    timeInput.value = chosenTime;
+
+    form.appendChild(dateInput);
+    form.appendChild(timeInput);
+
+    const token = document.createElement("input");
+    token.type = "hidden";
+    token.name = "authenticity_token";
+    token.value = document.querySelector('meta[name="csrf-token"]').content;
+
+    form.appendChild(token);
+
+    document.body.appendChild(form);
+
+    form.submit();
+
+});
+</script>

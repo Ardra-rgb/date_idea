@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  get "its_date/index"
   get "thank_you/index"
   get "gift/index"
   get "perfect_date/index"
   get "date/index"
   get "home/index"
+  get "its_date/index"
+  post "date/save", to: "date#save"
+  post "perfect_date/save", to: "perfect_date#save"
+  post "gift/save", to: "gift#save"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

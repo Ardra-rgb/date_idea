@@ -21,12 +21,62 @@
         </div>
 
         <button
+            id="next-btn"
             class="next-btn"
-            onclick="window.location='/thank_you/index'">
-            Next →
+            disabled>
+            Next ❤️
         </button>
             
 
     </div>
 
 </div>
+<script>
+let selectedGift = "";
+
+const cards = document.querySelectorAll(".gift-card");
+const nextBtn = document.getElementById("next-btn");
+
+cards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        cards.forEach(c => c.classList.remove("selected"));
+
+        card.classList.add("selected");
+
+        selectedGift = card.querySelector("p").innerText;
+
+        nextBtn.disabled = false;
+
+    });
+
+});
+
+nextBtn.addEventListener("click", () => {
+
+    const form = document.createElement("form");
+
+    form.method = "POST";
+    form.action = "/gift/save";
+
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "gift";
+    input.value = selectedGift;
+
+    form.appendChild(input);
+
+    const token = document.createElement("input");
+    token.type = "hidden";
+    token.name = "authenticity_token";
+    token.value = document.querySelector('meta[name="csrf-token"]').content;
+
+    form.appendChild(token);
+
+    document.body.appendChild(form);
+
+    form.submit();
+
+});
+</script>

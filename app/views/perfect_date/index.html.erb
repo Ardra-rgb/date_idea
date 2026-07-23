@@ -39,11 +39,60 @@
         </div>
 
         <button
+            id="continue-btn"
             class="continue-btn"
-            onclick="window.location='/gift/index'">
+            disabled>
             Continue ❤️
         </button>
 
     </div>
 
 </div>
+<script>
+let selectedOption = "";
+
+const cards = document.querySelectorAll(".option");
+const continueBtn = document.getElementById("continue-btn");
+
+cards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        cards.forEach(c => c.classList.remove("selected"));
+
+        card.classList.add("selected");
+
+        selectedOption = card.querySelector("p").innerText;
+
+        continueBtn.disabled = false;
+    });
+
+});
+
+continueBtn.addEventListener("click", () => {
+
+    const form = document.createElement("form");
+
+    form.method = "POST";
+    form.action = "/perfect_date/save";
+
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "perfect_date";
+    input.value = selectedOption;
+
+    form.appendChild(input);
+
+    const token = document.createElement("input");
+    token.type = "hidden";
+    token.name = "authenticity_token";
+    token.value = document.querySelector('meta[name="csrf-token"]').content;
+
+    form.appendChild(token);
+
+    document.body.appendChild(form);
+
+    form.submit();
+
+});
+</script>
