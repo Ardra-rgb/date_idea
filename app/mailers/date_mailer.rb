@@ -1,5 +1,5 @@
 class DateMailer < ApplicationMailer
-  default from: "tsyamardra@gmail.com"
+  default from: "Acme <onboarding@resend.dev>"
 
   def date_summary(date, time, perfect_date, gift)
     @date = date
