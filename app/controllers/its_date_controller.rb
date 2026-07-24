@@ -5,6 +5,6 @@ class ItsDateController < ApplicationController
       session[:time],
       session[:perfect_date],
       session[:gift]
-    ).deliver_now
+    ).deliver_later
   end
 end
