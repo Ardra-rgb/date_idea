@@ -66,9 +66,11 @@ config.action_mailer.smtp_settings = {
   port: 587,
   domain: "gmail.com",
   user_name: "tsyamardra@gmail.com",
-  password: "azyh erwg tobq mmbj",
-  authentication: "plain",
-  enable_starttls_auto: true
+  password: "NEW_APP_PASSWORD",
+  authentication: :plain,
+  enable_starttls_auto: true,
+  open_timeout: 30,
+  read_timeout: 30
 }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
