@@ -1,10 +1,10 @@
 class ItsDateController < ApplicationController
   def index
-    resend = Resend::Client.new(api_key: ENV["RESEND_API_KEY"])
+    Resend.api_key = ENV["RESEND_API_KEY"]
 
-    resend.emails.send(
-      from: "onboarding@resend.dev",
-      to: "tsyamardra@gmail.com",
+    params = {
+      from: "Acme <onboarding@resend.dev>",
+      to: ["tsyamardra@gmail.com"],
       subject: "New Date Plan",
       html: <<~HTML
         <h2>💖 New Date Plan</h2>
@@ -14,6 +14,15 @@ class ItsDateController < ApplicationController
         <p><strong>Perfect Date:</strong> #{session[:perfect_date]}</p>
         <p><strong>Gift:</strong> #{session[:gift]}</p>
       HTML
-    )
+    }
+
+    response = Resend::Emails.send(params)
+
+    Rails.logger.info "Resend Response: #{response.inspect}"
+    puts "Resend Response: #{response.inspect}"
+
+    # No redirect here.
+    # Rails will automatically render:
+    # app/views/its_date/index.html.erb
   end
 end
